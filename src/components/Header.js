@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useContext, UserContext } from '../context/UserContext'; 
 import { signOut } from '../services/auth';
 
 export default function Header() {

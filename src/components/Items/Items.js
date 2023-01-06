@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { useContext } from '../../context/UserContext';
 import { useItems } from '../../hooks/useItems';
+import { UserContext } from '../../context/UserContext';
 import { toggleListItem, createListItem } from '../../services/items';
 
 export default function Items() {
@@ -11,7 +11,7 @@ export default function Items() {
   const { items, setItems } = useItems();
   const { user } = useContext(UserContext);
   if (!user) {
-    return <Redirect to="/auth/sign-in"  />
+    return <Redirect to="/auth/sign-in" />;
   }
 
   const handleClick = async (item) => {
